@@ -1,0 +1,33 @@
+.divwrap{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:300px;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.divwrap h2{
+    font-family: "Lobster";
+    margin-bottom: 20px;
+}
+input {
+    border: 1px solid black;
+}
+
+button{
+    background: rgb(21, 21, 21);
+    border:none;
+    color:white;
+}
+p{
+    text-align: start;
+    margin-bottom: 5px;
+    font-family: "Neuton";
+}
