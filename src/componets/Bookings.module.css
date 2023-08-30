@@ -1,0 +1,84 @@
+.bookingwrap{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    flex-direction: column;
+    padding:20px;
+    width:360px;
+    min-height: 100px;
+    background-color: rgb(222, 220, 249);
+    border-radius: 10px;
+}
+
+.eachbookingdiv{
+    width:350px;
+    height: 150px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap:10%;
+    background: rgb(197,204,251);
+background: linear-gradient(90deg, rgba(197,204,251,1) 0%, rgba(200,252,252,1) 100%);
+    padding: 10px;
+    -webkit-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
+}
+
+.eachbookingdiv img{
+    width:150px;
+    height: 130px;
+    border-radius: 10px;
+}
+
+.eachbookingdiv h3{
+    font-family: "Lobster";
+}
+
+.eachbookingdiv button{
+    background: rgb(175, 7, 7);
+}
+
+.yourbookingh3{
+    text-align: center;
+    font-family: "Neuton";
+    margin-top: 20px;
+}
+
+.conformdelete{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:300px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: rgb(234, 243, 243);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.conformdelete button{
+    width:40px;
+    height:40px;
+    background: rgb(4, 4, 81);
+}
+
+.conformdelete div{
+    display: flex;
+    justify-content: space-between;
+    width:180px;
+}
+.conformdelete p
+{
+    font-family: "Neuton";
+}

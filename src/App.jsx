@@ -8,6 +8,8 @@ import Signup from './componets/Signup'
 import Homescreen from './admin/Homescreen'
 import Addvenue from './admin/Addvenue'
 import Selectedvenue from './componets/Selectedvenue'
+import Bookings from './componets/Bookings'
+import Conformbooking from './componets/Conformbooking'
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route element={<Homescreen />} path="/admin"></Route>
           <Route element={<Addvenue />} path="/addvenue"></Route>
           <Route element={<Selectedvenue />} path="/selectedvenue"></Route>
+          <Route element={<Bookings />} path="/bookings"></Route>
+          <Route element={<Conformbooking />} path="/conformbooking"></Route>
         </Routes>
       </Router>
     </>

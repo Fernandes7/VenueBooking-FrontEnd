@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import styles from "./Selectedvenue.module.css"
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { url } from '../API/Api'
 function Selectedvenue() {
+  const history=useNavigate()
   const statedata=useLocation()
+  console.log(statedata,"heloo")
   const [bookenable,setBookenable]=useState(false)
   const [viewbookigs,setViewbookings]=useState(false)
+  const [loading,setLoading]=useState(false)
   const [bookeddata,setBookeddata]=useState()
-  const [data,setData]=useState({userdata:statedata.state.userid,
+  const [data,setData]=useState({userdata:statedata.state.user._id,
     venuedata:statedata.state.venue._id,
     personname:"",
     programname:"",
@@ -25,15 +28,23 @@ function Selectedvenue() {
     if(!data[field])
     return alert(`All Fields must need to fill`)
   }
+  if(data.startdateandtime>=data.enddateandtime)
+  alert("Select the Program start and End Time Correctly")
+  else
   return true
   }
   const callApi=()=>{
     const fulldataadded=validate()
     if(fulldataadded)
     {
+      setLoading(true)
         axios.post(`${url}/booking`,{data}).then((responce)=>{
             if(responce.data.success)
+            {
+            setLoading(false)
             alert("Booked SuccessFully")
+            history("/conformbooking",{state:{venuedata:statedata.state.venue,userdata:statedata.state.user}})
+            }
             else
             alert(responce.data.data)
 
@@ -63,6 +74,7 @@ function Selectedvenue() {
   }
   return (
     <div>
+    <button style={{float:"right",marginRight:"10px"}} onClick={()=>history(-1)}>Back To Home</button>
         <div className={styles.selectwrap}>
             <img src={statedata.state.venue.image} alt="selected Venue image"></img>
             <h1>{statedata.state.venue.name}</h1>
@@ -96,15 +108,17 @@ function Selectedvenue() {
          </div>
          <div>
             <p>Enter End Date and Time</p>
-            <input type="datetime-local" name="enddateandtime" onChange={handle} min={getCurrentDateTime()}></input>
+            <input type="datetime-local" name="enddateandtime" onChange={handle} min={data.startdateandtime}></input>
          </div>
+         {loading &&<p>Checking the Availability for Booking.....</p>}
          <button onClick={callApi}>Book Now</button>
          <img className={styles.close} src="https://cdn-icons-png.flaticon.com/128/10412/10412365.png" alt="close" onClick={()=>setBookenable(false)}></img>
         </div>}
-        {
+        {//viewbookings Popup
             viewbookigs && <div className={styles.viewwrap}>
+            <h3 className={styles.h3ofcb}>Current Bookings</h3>
             <img className={styles.close} src="https://cdn-icons-png.flaticon.com/128/10412/10412365.png" alt="close" onClick={()=>setViewbookings(false)}></img>
-            {bookeddata.length>0 ? bookeddata.map((item)=>{
+            {bookeddata && bookeddata.length>0 ? bookeddata.map((item)=>{
                 const date=item.startdateandtime.split("T")[0]
                 const time=item.startdateandtime.split("T")[1]
                 return(

@@ -6,7 +6,8 @@ function Homescreen() {
   return (
     <div>
     <img  className={styles.adminimage} src="https://img.freepik.com/premium-photo/neon-pc-gaming-room-rgb-color-glow-effect_717440-435.jpg?w=2000" alt="adminbgimage" />
-    <h1>Welcome To Admin Panel</h1>
+    <h1 style={{color:"white",zIndex:9999,position:"absolute",top:"-20%",minWidth:"400px"}}>Welcome To Admin Panel</h1>
+    <button style={{zIndex:9999,position:"absolute",top:"5%",right:"1%",background:"white",color:"black"}} onClick={()=>history(-1)}>Back To Home</button>
     <div className={styles.innerwrapdiv}>
         <div onClick={()=>history("/addvenue")}>
             <h3>Add Venue</h3>
