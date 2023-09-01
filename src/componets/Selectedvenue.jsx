@@ -110,7 +110,7 @@ function Selectedvenue() {
             <p>Enter End Date and Time</p>
             <input type="datetime-local" name="enddateandtime" onChange={handle} min={data.startdateandtime}></input>
          </div>
-         {loading &&<p>Checking the Availability for Booking.....</p>}
+         {loading && <p>Checking the Availability for Booking.....</p>}
          <button onClick={callApi}>Book Now</button>
          <img className={styles.close} src="https://cdn-icons-png.flaticon.com/128/10412/10412365.png" alt="close" onClick={()=>setBookenable(false)}></img>
         </div>}
