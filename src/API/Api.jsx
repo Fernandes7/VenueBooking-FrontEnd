@@ -1,2 +1,2 @@
-const url=import.meta.env.VITE_SERVERURL
+const url="https://ccevenuebooking.onrender.com"
 export {url}
