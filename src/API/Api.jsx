@@ -1,2 +1,2 @@
-const url="http://localhost:8000"
+const url=import.meta.env.VITE_SERVERURL
 export {url}

@@ -56,7 +56,7 @@ h1{
     background: linear-gradient(90deg, rgba(197,204,251,1) 0%, rgba(200,252,252,1) 100%);
     width:300px;
     position:absolute;
-    top:50%;
+    top:70%;
     left:50%;
     transform: translate(-50%,-50%);
     display:flex;
@@ -136,4 +136,16 @@ margin-bottom: 20px;
 .h3ofcb{
     margin-bottom: 10px;
     font-family: "Neuton";
+}
+.checkdiv div{
+    display: flex;
+    gap:10px;
+    justify-content: center;
+    align-items: center;
+}
+.checkdiv p{
+    width: 230px;
+}
+.checkinput{
+    width:20px;
 }

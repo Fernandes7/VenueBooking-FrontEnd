@@ -11,6 +11,8 @@ function Selectedvenue() {
   const [viewbookigs,setViewbookings]=useState(false)
   const [loading,setLoading]=useState(false)
   const [bookeddata,setBookeddata]=useState()
+  let date
+  let time
   const [data,setData]=useState({userdata:statedata.state.user._id,
     venuedata:statedata.state.venue._id,
     personname:"",
@@ -18,15 +20,22 @@ function Selectedvenue() {
     semdept:"",
     startdateandtime:"",
     enddateandtime:"",
+    noofstudents:""
 })
   const handle=(event)=>{
     setData({...data,[event.target.name]:event.target.value})
   }
+  const handlecheck=(event)=>{
+    setData({...data,[event.target.name]:event.target.checked})
+  }
   const validate=()=>{
     for (const field in data)
   {
-    if(!data[field])
-    return alert(`All Fields must need to fill`)
+    if((field!="projector"&&field!="soundandmic"&&field!="connectionitem"))
+    {
+      if(!data[field])
+      return alert(`All Fields must need to fill`)
+    }
   }
   if(data.startdateandtime>=data.enddateandtime)
   alert("Select the Program start and End Time Correctly")
@@ -37,6 +46,7 @@ function Selectedvenue() {
     const fulldataadded=validate()
     if(fulldataadded)
     {
+      console.log(data)
       setLoading(true)
         axios.post(`${url}/booking`,{data}).then((responce)=>{
             if(responce.data.success)
@@ -46,7 +56,14 @@ function Selectedvenue() {
             history("/conformbooking",{state:{venuedata:statedata.state.venue,userdata:statedata.state.user}})
             }
             else
-            alert(responce.data.data)
+            {
+            setLoading(false)
+            setBookenable(false)
+            setViewbookings(true)
+            setBookeddata(responce.data.data)
+             date=bookeddata.startdateandtime.split("T")[0]
+             time=bookeddata.startdateandtime.split("T")[1]
+            }
 
         })
     }
@@ -61,17 +78,6 @@ function Selectedvenue() {
     
     return `${year}-${month}-${day}T${hours}:${minutes}`;
   }
-  const viewbookingsApi=()=>{
-  setBookenable(false)
-  setViewbookings(true)
-  axios.post(`${url}/viewbooking`,{venuedata:statedata.state.venue._id}).then((responce)=>{
-    if(responce.data.success)
-    setBookeddata(responce.data.data)
-    else
-    alert("Failed to View Bookings")
-
-  })
-  }
   return (
     <div>
     <button style={{float:"right",marginRight:"10px"}} onClick={()=>history(-1)}>Back To Home</button>
@@ -83,7 +89,6 @@ function Selectedvenue() {
                 <p>Capacity:{statedata.state.venue.capacity}</p>
             </div>
             <div className={styles.selectbutton}>
-                <button onClick={viewbookingsApi} >View Bookings</button>
                 <button onClick={()=>setBookenable(true)}>Book Now</button>
             </div>
         </div>
@@ -103,12 +108,37 @@ function Selectedvenue() {
             <input type="text" name="semdept" onChange={handle}></input>
          </div>
          <div>
-            <p>Select Start Date and Time</p>
+            <p>Select Start Date and Time (24 hr format)</p>
             <input type="datetime-local" name="startdateandtime" onChange={handle} min={getCurrentDateTime()}></input>
          </div>
          <div>
-            <p>Enter End Date and Time</p>
+            <p>Enter End Date and Time (24 hr format)</p>
             <input type="datetime-local" name="enddateandtime" onChange={handle} min={data.startdateandtime}></input>
+         </div>
+         <div>
+            <p>Enter The No of Students Participate</p>
+            <input type="number" name="noofstudents" min="1" max="500" onChange={handle} placeholder='Max Limit 500'></input>
+         </div>
+         <div>
+            <p>Select Items if required  (Enable Checkbox)</p>
+            <div className={styles.checkdiv}>
+              <div>
+              <p>Sound and Mic</p>
+              <input type="checkbox" name="soundandmic"  onChange={handlecheck} className={styles.checkinput}></input>
+              </div>
+              <div>
+              <p>Projector</p>
+              <input type="checkbox" name="projector" onChange={handlecheck} className={styles.checkinput}></input>
+              </div>
+              <div>
+              <p>Connection Accessories</p>
+              <input type="checkbox" name="connectionitem" onChange={handlecheck} className={styles.checkinput}></input>
+              </div>
+            </div>
+            <div>
+            <p>Remarks</p>
+            <input type="textbox" name="remarks" onChange={handle} placeholder="Type Here your remarks"></input>
+         </div>
          </div>
          {loading && <p>Checking the Availability for Booking.....</p>}
          <button onClick={callApi}>Book Now</button>
@@ -116,23 +146,19 @@ function Selectedvenue() {
         </div>}
         {//viewbookings Popup
             viewbookigs && <div className={styles.viewwrap}>
-            <h3 className={styles.h3ofcb}>Current Bookings</h3>
+            <h3 className={styles.h3ofcb}>Already Bookings</h3>
             <img className={styles.close} src="https://cdn-icons-png.flaticon.com/128/10412/10412365.png" alt="close" onClick={()=>setViewbookings(false)}></img>
-            {bookeddata && bookeddata.length>0 ? bookeddata.map((item)=>{
-                const date=item.startdateandtime.split("T")[0]
-                const time=item.startdateandtime.split("T")[1]
-                return(
+            {bookeddata ? 
                 <div className={styles.eachbookdiv}>
-                <h3>{item.programname}</h3>
+                <h3>{bookeddata.programname}</h3>
                 <div>
-                    <h5>{item.userdata.username}</h5>
-                    <p>{item.semdept}</p>
+                    <h5>{bookeddata.personname}</h5>
+                    <p>{bookeddata.semdept}</p>
                 </div>
-                <p>Start Date:{date} Time:{time}</p>
-                <p>End Date:{item.enddateandtime.split("T")[0]} Time:{item.enddateandtime.split("T")[1]}</p>
+                <p>Start Date:{bookeddata.startdateandtime.split("T")[0]} Time:{bookeddata.startdateandtime.split("T")[1]}</p>
+                <p>End Date:{bookeddata.enddateandtime.split("T")[0]} Time:{bookeddata.enddateandtime.split("T")[1]}</p>
             </div>    
-                )
-            }):<h3 style={{textAlign:"center",fontFamily:"Lobster"}}>Currenty Not Have Any Booking</h3>}
+            :<h3 style={{textAlign:"center",fontFamily:"Lobster"}}>Currenty Not Have Any Booking</h3>}
             </div>
         }
     </div>
