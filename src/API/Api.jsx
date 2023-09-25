@@ -1,3 +1,2 @@
-// const url="https://ccevenuebooking.onrender.com"
-const url="http://localhost:8000"
+const url="https://ccevenuebooking.onrender.com"
 export {url}
