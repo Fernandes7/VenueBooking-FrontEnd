@@ -96,7 +96,7 @@ function Selectedvenue() {
         bookenable &&<div className={styles.bookwrap}>
          <h2>Christ Auditoruim</h2>
          <div>
-            <p>Enter Booking person Name</p>
+            <p>Enter Faculty Name</p>
             <input type="text" name="personname" onChange={handle} ></input>
          </div>
          <div>
@@ -108,7 +108,7 @@ function Selectedvenue() {
             <input type="text" name="semdept" onChange={handle}></input>
          </div>
          <div>
-            <p>Enter Booking Person Mobile No</p>
+            <p>Enter Booking Faculty No</p>
             <input type="text" name="phoneno" onChange={handle}></input>
          </div>
          <div>
