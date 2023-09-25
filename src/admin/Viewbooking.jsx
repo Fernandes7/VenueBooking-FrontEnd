@@ -71,7 +71,7 @@ function Viewbooking() {
              <p>{item.remarks}</p>
          </div>
             )
-         }):<h3>No Bookings Currently</h3>}
+         }):<p>Loading datas......</p>}
          
         </div>
     </div>
