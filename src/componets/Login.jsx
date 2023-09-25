@@ -6,14 +6,17 @@ import { url } from '../API/Api'
 function Login() {
   const history=useNavigate()
   const [data,setData]=useState({})
+  const [loading,setLoading]=useState(false)
   const handle=(event)=>{
   setData({...data,[event.target.name]:event.target.value})
   }
   const callAPI=()=>{
+    setLoading(true)
     axios.post(`${url}/login`,{data}).then((responce)=>{
         console.log(responce)
         if(responce.data.success)
         {
+            setLoading(false)
             alert("Logined Successfully")
             localStorage.setItem("myname",responce.data.user.username)
             history("/home",{state:{data:responce.data.user}})
@@ -32,6 +35,7 @@ function Login() {
          <p onClick={()=>history("/signup")} className={styles.loginp}>Not have account REGISTER</p>
          <p className={styles.loginp}>Forgot Password</p>
          <div>
+         {loading && <p>loading......</p>}
          <button onClick={callAPI}>Login</button>
          </div>
         </div>
