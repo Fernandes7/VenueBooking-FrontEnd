@@ -100,7 +100,7 @@ function Selectedvenue() {
             <input type="text" name="personname" onChange={handle} ></input>
          </div>
          <div>
-            <p>Enter Progra/Event Name</p>
+            <p>Enter Program/Event Name</p>
             <input type="text" name="programname" onChange={handle} ></input>
          </div>
          <div>
