@@ -15,6 +15,9 @@ function Homescreen() {
         <div onClick={()=>history("/adminviewbooking")}>
             <h3>View Bookings</h3>
         </div>
+        <div onClick={()=>history("/adminviewbookinghistory")}>
+            <h3>Bookings History</h3>
+        </div>
     </div>
     </div>
   )

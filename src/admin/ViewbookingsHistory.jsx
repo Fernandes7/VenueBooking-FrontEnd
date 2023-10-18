@@ -3,7 +3,7 @@ import styles from "./Viewbooking.module.css"
 import axios from 'axios'
 import { url } from '../API/Api'
 import { useNavigate } from 'react-router-dom'
-function Viewbooking() {
+function ViewbookingHistory() {
  const history=useNavigate()
  const [bookingdata,setBookingData]=useState()
  useEffect(()=>{
@@ -15,9 +15,9 @@ function Viewbooking() {
     <div >
      <button style={{zIndex:9999,position:"absolute",top:"0%",right:"1%",background:"white",color:"black"}} onClick={()=>history(-1)}>Back To Home</button>
         <div className={styles.viewbookmainwrap}>
-        <h2>Current Bookings</h2>
+        <h2>Previous Bookings</h2>
          {bookingdata ? bookingdata.map((item)=>{
-            if(!item.isoutdated && item.isoutdated==false )
+            if(item.isoutdated && item.isoutdated==true)
             {
             return (
                 <div className={styles.innerviewdiv}>
@@ -81,4 +81,4 @@ function Viewbooking() {
   )
 }
 
-export default Viewbooking
+export default ViewbookingHistory

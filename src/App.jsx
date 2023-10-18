@@ -11,6 +11,7 @@ import Selectedvenue from './componets/Selectedvenue'
 import Bookings from './componets/Bookings'
 import Conformbooking from './componets/Conformbooking'
 import Viewbooking from './admin/Viewbooking'
+import ViewbookingHistory from './admin/ViewbookingsHistory'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route element={<Homescreen />} path="/admin"></Route>
           <Route element={<Addvenue />} path="/addvenue"></Route>
           <Route element={<Viewbooking />} path="/adminviewbooking"></Route>
+          <Route element={<ViewbookingHistory />} path="/adminviewbookinghistory"></Route>
           <Route element={<Selectedvenue />} path="/selectedvenue"></Route>
           <Route element={<Bookings />} path="/bookings"></Route>
           <Route element={<Conformbooking />} path="/conformbooking"></Route>
