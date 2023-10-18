@@ -37,6 +37,8 @@ function Bookings() {
         <button style={{float:"right",marginRight:"10px"}} onClick={()=>history(-1)}>Back To Home</button>
         <div className={styles.bookingwrap}>
         {(bookings && bookings.length>0) ? bookings.map((item,key)=>{
+          if(item.isoutdated==false)
+          {
             return(
           <div key={key} className={styles.eachbookingdiv}>
             <img src={item.venuedata.image} alt="booking images" />
@@ -47,6 +49,7 @@ function Bookings() {
             </div>
           </div>
             )
+          }
         }):<h3 style={{textAlign:"center",fontFamily:"Lobster"}}>You Didnt Have any Bookings</h3>}
         </div>
         {conformdeleteenable &&<div className={styles.conformdelete}>
