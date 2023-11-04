@@ -1,3 +1,3 @@
-const url="https://ccevenuebooking.onrender.com"
-const urls="http://localhost:8000"
+const urls="https://ccevenuebooking.onrender.com"
+const url="http://localhost:8000"
 export {url}

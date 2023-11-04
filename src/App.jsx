@@ -12,6 +12,7 @@ import Bookings from './componets/Bookings'
 import Conformbooking from './componets/Conformbooking'
 import Viewbooking from './admin/Viewbooking'
 import ViewbookingHistory from './admin/ViewbookingsHistory'
+import Loading from './componets/Loading'
 
 function App() {
   return (

@@ -3,6 +3,7 @@ import styles from "./Login.module.css"
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { url } from '../API/Api'
+import Loading from './Loading'
 function Login() {
   const history=useNavigate()
   const [data,setData]=useState({})
@@ -22,7 +23,10 @@ function Login() {
             history("/home",{state:{data:responce.data.user}})
         }
         else
+        {
+        setLoading(false)
         alert(responce.data.data)
+        }
     })
   }
   return (
@@ -35,10 +39,10 @@ function Login() {
          <p onClick={()=>history("/signup")} className={styles.loginp}>Not have account REGISTER</p>
          <p className={styles.loginp}>Forgot Password</p>
          <div>
-         {loading && <p>loading......</p>}
          <button onClick={callAPI}>Login</button>
          </div>
         </div>
+        {loading && <Loading />}
     </div>
   )
 }

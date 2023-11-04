@@ -1,0 +1,25 @@
+.loaddiv{
+    position:absolute;
+    top:0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(248, 244, 244, 0.827);
+}
+
+.loaddiv div img{
+width: 200px;
+height: 200px;
+}
+
+.loaddiv div{
+    width: 150px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

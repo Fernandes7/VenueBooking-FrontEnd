@@ -51,6 +51,7 @@ function Signup() {
             <option value="">Select One Option</option>
             <option value="What is Your pet Names">What is Your Pet Name</option>
             <option value="What is Your Favorite Food">What is Your Favorite Food</option>
+            <option value="What is Your college name">What is Your Collge Name</option>
          </select>
          <input type="text" placeholder='Enter Your Ans for Above Question' name="usersecurityquestionans" onChange={handle}></input>
          <p onClick={()=>history("/login")} className={styles.loginp}> Already have account LOGIN</p>
