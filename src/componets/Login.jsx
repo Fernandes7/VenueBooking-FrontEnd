@@ -7,7 +7,7 @@ import Loading from './Loading'
 function Login() {
   const history=useNavigate()
   const [data,setData]=useState({})
-  const [loading,setLoading]=useState(false)
+  const [loading,setLoading]=useState(true)
   const handle=(event)=>{
   setData({...data,[event.target.name]:event.target.value})
   }
