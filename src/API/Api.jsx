@@ -1,3 +1,2 @@
-const url="api.venuebooking.cce.edu.in"
-const urls="http://localhost:8000"
+const url="http://api.venuebooking.cce.edu.in/"
 export {url}
