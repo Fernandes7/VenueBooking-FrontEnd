@@ -13,7 +13,7 @@ function Startpage() {
                <h2>Christ Venue Booking</h2>
                <div className={styles.authdiv}>
                 <button onClick={()=>history("/login")}>Login</button>
-                <button onClick={()=>history("/Signup")}>Register</button>
+                <button onClick={()=>alert("Registration is closed Temporarily")}>Register</button>
                </div>
             </div>
         </div>

@@ -36,7 +36,7 @@ function Login() {
          <p className={styles.logindivp}>Welcome To Christ Venue Booking</p>
          <input type="email" placeholder='Enter Your Email id' name="useremail" onChange={handle}></input>
          <input type="password" placeholder='Enter Your Password' name="userpassword" onChange={handle}></input>
-         <p onClick={()=>history("/signup")} className={styles.loginp}>Not have account REGISTER</p>
+         {/* <p onClick={()=>history("/signup")} className={styles.loginp}>Not have account REGISTER</p> */}
          <p className={styles.loginp}>Forgot Password</p>
          <div>
          <button onClick={callAPI}>Login</button>
