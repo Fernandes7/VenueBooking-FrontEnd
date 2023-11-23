@@ -1,2 +1,3 @@
-const url="http://api.venuebooking.cce.edu.in"
-export {url}
+const urls="http://api.venuebooking.cce.edu.in"
+const url="https://ccevenuebooking.onrender.com"
+export {url}   
