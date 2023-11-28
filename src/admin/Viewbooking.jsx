@@ -15,7 +15,7 @@ function Viewbooking() {
     <div >
      <button style={{zIndex:9999,position:"absolute",top:"0%",right:"1%",background:"white",color:"black"}} onClick={()=>history(-1)}>Back To Home</button>
         <div className={styles.viewbookmainwrap}>
-        <h2>Current Bookings</h2>
+        <h2>Current Bookings......</h2>
          {bookingdata ? bookingdata.map((item)=>{
             if(!item.isoutdated && item.isoutdated==false )
             {
