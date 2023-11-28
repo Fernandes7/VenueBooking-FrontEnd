@@ -5,7 +5,7 @@
     transform: translate(-50%,-50%);
     background: rgb(239,240,247);
 background: linear-gradient(90deg, rgba(239,240,247,1) 0%, rgba(225,254,254,1) 100%);
-    width:380px;
+    width:300px;
     height: 300px;
     border-radius: 10px;
     display: flex;
@@ -18,13 +18,15 @@ box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.75);
 }
 
 .conformbookdiv h2{
-    font-family: "Lobster";
+    font-family: "Neuton";
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .conformbookdiv button{
     background: rgb(7, 7, 79);
     width:150px;
+    color: white;
 }
 
 .maindivs{

@@ -30,7 +30,7 @@ function Login() {
     })
   }
   return (
-    <div>
+    <div className={styles.loginbody}>
         <div className={styles.logindiv}>
          <h3>Login Page</h3>
          <p className={styles.logindivp}>Welcome To Christ Venue Booking</p>
@@ -39,7 +39,7 @@ function Login() {
          {/* <p onClick={()=>history("/signup")} className={styles.loginp}>Not have account REGISTER</p> */}
          <p className={styles.loginp}>Forgot Password</p>
          <div>
-         <button onClick={callAPI}>Login</button>
+         <button onClick={callAPI} className={styles.button}>Login</button>
          </div>
         </div>
         {loading && <Loading />}

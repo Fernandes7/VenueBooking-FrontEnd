@@ -14,6 +14,9 @@
     background-color: rgb(222, 220, 249);
     border-radius: 10px;
 }
+.ccbutton{
+    color:white;
+}
 
 .eachbookingdiv{
     width:350px;
@@ -71,6 +74,7 @@ box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
     width:40px;
     height:40px;
     background: rgb(4, 4, 81);
+    color: white;
 }
 
 .conformdelete div{
@@ -81,4 +85,6 @@ box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
 .conformdelete p
 {
     font-family: "Neuton";
+    text-align: center;
+    width: 250px;
 }

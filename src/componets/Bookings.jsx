@@ -45,7 +45,7 @@ function Bookings() {
             <div>
                 <h3>{item.venuedata.name}</h3>
                 <p>{item.venuedata.block}</p>
-                <button onClick={()=>handle(item)}>Cancel Booking</button>
+                <button onClick={()=>handle(item)} className={styles.ccbutton}>Cancel Booking</button>
             </div>
           </div>
             )
@@ -53,7 +53,7 @@ function Bookings() {
         }):<h3 style={{textAlign:"center",fontFamily:"Lobster"}}>You Didnt Have any Bookings</h3>}
         </div>
         {conformdeleteenable &&<div className={styles.conformdelete}>
-            <p> Do you want to Cancel {deletename.venuedata.name}</p>
+            <p> Do you want to Cancel Booking of {deletename.venuedata.name}</p>
             <div>
             <button onClick={()=>setConformdeleteenable(false)}>No</button>
             <button onClick={deletes}>Yes</button>
