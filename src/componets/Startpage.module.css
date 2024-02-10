@@ -7,7 +7,7 @@
 .imges{
     width:100%;
     height: 100vh;
-    filter: brightness(20%);
+    filter: brightness(30%);
 }
 
 .imagecontent{
@@ -38,6 +38,7 @@
     top:50%;
     font-size: 40px;
     text-align: center;
+    width: 300px;
 }
 
 .authdiv{
@@ -46,8 +47,8 @@
 }
 
 .authdiv button{
-    background: rgb(221,223,237);
-    background: linear-gradient(90deg, rgba(221,223,237,1) 0%, rgba(201,222,246,1) 100%);
+    background: rgb(236,238,250);
+    background: linear-gradient(90deg, rgba(236,238,250,1) 0%, rgba(205,241,242,1) 100%);
     border-radius: 5px;
     width:100px;
     height: 40px;

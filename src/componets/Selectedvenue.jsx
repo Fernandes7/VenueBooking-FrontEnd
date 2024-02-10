@@ -60,6 +60,7 @@ function Selectedvenue() {
             setLoading(false)
             setBookenable(false)
             setViewbookings(true)
+            alert("Conflict In Booking Contact the Admin")
             setBookeddata(responce.data.data)
              date=bookeddata.startdateandtime.split("T")[0]
              time=bookeddata.startdateandtime.split("T")[1]
@@ -79,7 +80,7 @@ function Selectedvenue() {
     return `${year}-${month}-${day}T${hours}:${minutes}`;
   }
   return (
-    <div>
+    <div className={styles.ssbody}>
     <button style={{float:"right",marginRight:"10px"}} onClick={()=>history(-1)}>Back To Home</button>
         <div className={styles.selectwrap}>
             <img src={statedata.state.venue.image} alt="selected Venue image"></img>
@@ -89,10 +90,11 @@ function Selectedvenue() {
                 <p>Capacity:{statedata.state.venue.capacity}</p>
             </div>
             <div className={styles.selectbutton}>
-                <button onClick={()=>setBookenable(true)}>Book Now</button>
+                <button onClick={()=>setBookenable(true)} className={styles.ssbutton}>Book Now</button>
             </div>
         </div>
-        {//booking form div
+        {
+        //booking form div
         bookenable &&<div className={styles.bookwrap}>
          <h2>Christ Auditoruim</h2>
          <div>
@@ -145,12 +147,12 @@ function Selectedvenue() {
          </div>
          </div>
          {loading && <p>Checking the Availability for Booking.....</p>}
-         <button onClick={callApi}>Book Now</button>
+         <button onClick={callApi} className={styles.bbbbutton}>Book Now</button>
          <img className={styles.close} src="https://cdn-icons-png.flaticon.com/128/10412/10412365.png" alt="close" onClick={()=>setBookenable(false)}></img>
         </div>}
         {//viewbookings Popup
             viewbookigs && <div className={styles.viewwrap}>
-            <h3 className={styles.h3ofcb}>Already Bookings</h3>
+            <h3 className={styles.h3ofcb}>Already have Booking</h3>
             <img className={styles.close} src="https://cdn-icons-png.flaticon.com/128/10412/10412365.png" alt="close" onClick={()=>setViewbookings(false)}></img>
             {bookeddata ? 
                 <div className={styles.eachbookdiv}>

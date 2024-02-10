@@ -5,7 +5,7 @@ function Homescreen() {
  const history=useNavigate()
   return (
     <div>
-    <img  className={styles.adminimage} src="https://img.freepik.com/premium-photo/neon-pc-gaming-room-rgb-color-glow-effect_717440-435.jpg?w=2000" alt="adminbgimage" />
+    <img  className={styles.adminimage} src="https://images.unsplash.com/photo-1635614017406-7c192d832072?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="adminbgimage" />
     <h1 style={{color:"white",zIndex:9999,position:"absolute",top:"-100px",minWidth:"400px"}}>Welcome To Admin Panel</h1>
     <button style={{zIndex:9999,position:"absolute",top:"0%",right:"1%",background:"white",color:"black"}} onClick={()=>history(-1)}>Back To Home</button>
     <div className={styles.innerwrapdiv}>

@@ -37,17 +37,8 @@ input{
     padding: 10px;
     font-family: "Poppins";
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 50px;
 
-}
-button{
-    background: rgb(22, 7, 136);
-    color:white;
-    border-radius: 5px;
-    width:100px;
-    height: 40px;
-    font-family: "Neuton";
-    margin-top: 30px;
 }
 .loginp{
     font-family:"Neuton";
