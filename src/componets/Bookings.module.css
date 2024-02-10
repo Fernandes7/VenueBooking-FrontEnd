@@ -1,90 +1,144 @@
-.bookingwrap{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:10px;
-    flex-direction: column;
-    padding:20px;
-    width:360px;
-    min-height: 100px;
-    background-color: rgb(222, 220, 249);
-    border-radius: 10px;
-}
-.ccbutton{
-    color:white;
-}
-
-.eachbookingdiv{
-    width:350px;
-    height: 150px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap:10%;
-    background: rgb(197,204,251);
-background: linear-gradient(90deg, rgba(197,204,251,1) 0%, rgba(200,252,252,1) 100%);
-    padding: 10px;
-    -webkit-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
-}
-
-.eachbookingdiv img{
-    width:150px;
-    height: 130px;
-    border-radius: 10px;
-}
-
-.eachbookingdiv h3{
-    font-family: "Lobster";
-}
-
-.eachbookingdiv button{
-    background: rgb(175, 7, 7);
-}
-
 .yourbookingh3{
     text-align: center;
-    font-family: "Neuton";
+    font-family:"algerian" ;
     margin-top: 20px;
+
+}
+
+.bookingwrap{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bookingallwarpdiv{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .conformdelete{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    width:300px;
-    height: 100px;
-    border-radius: 10px;
-    background-color: rgb(234, 243, 243);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-
+  background: rgb(161,201,248);
+  background: radial-gradient(circle, rgba(161,201,248,1) 0%, rgb(146, 146, 255) 100%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 300px;
+  height: 100px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  flex-direction: column;
+  border-radius: 10px;
 }
 
-.conformdelete button{
-    width:40px;
-    height:40px;
-    background: rgb(4, 4, 81);
+.cbbutton{
+    background: rgb(164, 2, 2);
     color: white;
 }
 
 .conformdelete div{
     display: flex;
-    justify-content: space-between;
-    width:180px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
-.conformdelete p
-{
-    font-family: "Neuton";
+.viewbookmainwrap{
+    width:300px;
+    min-height: 500px;
+    background: rgb(197,204,251);
+background: linear-gradient(90deg, rgba(197,204,251,1) 0%, rgba(127,210,231,1) 100%);
+    border-radius: 10px;
+    position: absolute;
+    margin-top: 100px;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.75);
+     box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.75);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+.viewbookmainwrap h2{
+    font-family: algerian;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.innerviewdiv{
+width:320px;
+background-color:rgb(228, 240, 245);
+min-height: 400px;
+border-radius: 10px;
+margin-top: 10px;
+padding: 10px;
+margin-bottom: 10px;
+}
+
+.innerviewdiv h3{
+    font-family: "Lobster";
+}
+.pview{
+    margin-top: 10px;
+}
+.tview{
+display: flex;
+gap:20px;
+}
+.itview{
+display: flex;
+justify-content: center;
+align-items: center;
+gap:5px;
+margin-top: 20px;
+}
+.itview img{
+width: 18px;
+height: 18px;
+}
+.itview p{
+    font-size: 15px;
+}
+.tiv{
+    width:175px;
+}
+.tiv p{
     text-align: center;
-    width: 250px;
+}
+.rview{
+    display:flex;
+}
+.rviewimg{
+    width: 150px;
+    height: 150px;
+    margin-left: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75)
+}
+
+.chimg{
+    width: 20px;
+    height: 20px;
+}
+.chdiv{
+    display: flex;
+    gap:5px;
+}
+.opdiv{
+    display:flex;
+    gap:10px;
+}
+.innerviewdiv h4{
+    font-family: "Neuton";
+    margin-bottom: 10px;
+}
+.remarksp{
+    margin-top: 20px;
 }

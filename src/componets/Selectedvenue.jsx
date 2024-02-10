@@ -93,7 +93,8 @@ function Selectedvenue() {
                 <button onClick={()=>setBookenable(true)} className={styles.ssbutton}>Book Now</button>
             </div>
         </div>
-        {//booking form div
+        {
+        //booking form div
         bookenable &&<div className={styles.bookwrap}>
          <h2>Christ Auditoruim</h2>
          <div>
